@@ -1,3 +1,4 @@
+import operator
 import os
 import subprocess
 # instruction list from https://www.felixcloutier.com/x86/
@@ -42,4 +43,4 @@ for i in range(wantlen):
 	else:
 		dic[ins] = dic[ins] + 1
 
-print dic
+print sorted(dic.items(),key=operator.itemgetter(1),reverse=True)
